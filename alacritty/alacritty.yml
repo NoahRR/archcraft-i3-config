@@ -28,11 +28,11 @@ window:
   dynamic_title: true
 
 ## scrolling
-  history: 10000
+  history: 50000
   multiplier: 3
 
 ## Background opacity
-background_opacity: 1.0
+background_opacity: .7
 
 ## Cursor
 cursor:
