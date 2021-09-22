@@ -9,3 +9,4 @@ sudo pacman -Syyu && sudo pacman -S archcraft-i3wm
 - rename the current i3 directory to i3.old or something
 - git clone this repo, then rename the directory to i3
 - make sure to install all depencies
+- this build is configured to work with my config and my preferences - you can easily comment out most things and replace with your own.
