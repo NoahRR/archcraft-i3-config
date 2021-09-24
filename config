@@ -79,6 +79,9 @@ set $mod Mod1
 # Configure keyboard repeat speed
 exec_always --no-startup-id sleep1; xset r rate 200 40
 
+# set screen resolution on Dell XPS 17
+exec_always --no-startup-id bash ~/.config/i3/i3_startup.sh
+
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
@@ -138,7 +141,7 @@ exec --no-startup-id pa-applet
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+F2 exec palemoon
-bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Shift+Return exec microsoft-edge-beta
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec rambox
