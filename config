@@ -141,7 +141,7 @@ exec --no-startup-id pa-applet
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+F2 exec palemoon
-bindsym $mod+Shift+Return exec microsoft-edge-beta
+bindsym $mod+Shift+Return exec microsoft-edge-dev
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec rambox
