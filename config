@@ -2,7 +2,8 @@
 # 
 # steps for UBUNTU:
 # - sudo apt install feh                    [set background]
-# exec_always --no-snartup-id sleep1; feh --bg-fill ~/SAVED_DOWNLOADS/beiheng-guo-IAVVv6z3D6g-unsplash.jpg
+# exec_always --no-snartup-id sleep1; feh --bg-fill ~/SAVED_DOWNLOADS/bak1-pink.jpg
+exec_always --no-startup-id sleep1; /usr/bin/feh --bg-scale ~/SAVED_DOWNLOADS/images/BAK-AC.png
 # exec --no-startup-id exec bash $HOME/.fehbg
 # exec_always --no-startup-id feh --no-fehbg --bg-scale ~/SAVED_DOWNLOADS/beiheng-guo-IAVVv6z3D6g-unsplash.jpg &
 
@@ -47,6 +48,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
+exec --no-startup-id optimus-manager-qt
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
@@ -141,7 +143,8 @@ exec --no-startup-id pa-applet
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+F2 exec palemoon
-bindsym $mod+Shift+Return exec microsoft-edge-dev
+# bindsym $mod+Shift+Return exec microsoft-edge-dev
+bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec rambox
@@ -557,7 +560,9 @@ exec_always --no-startup-id ~/.config/i3/bin/autostart.sh
 ##-- Key Bindings ------------------------
 
 # -- Apps --
-bindsym $mod+Return exec ~/.config/i3/bin/i3term.sh
+#bindsym $mod+Return exec ~/.config/i3/bin/i3term.sh
+bindsym $mod+Return exec /usr/bin/gnome-terminal
+# bindsym $mod+Return exec /usr/bin/kitty
 # bindsym $mod+Shift+Return exec ~/.config/i3/bin/i3term.sh -f
 # bindsym $mod+Shift+f exec thunar
 # bindsym $mod+Shift+e exec geany
