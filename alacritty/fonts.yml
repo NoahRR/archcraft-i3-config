@@ -2,27 +2,31 @@
 font:
   # Normal (roman) font face
   normal:
-    family: "JetBrains Mono Medium"
+    # family: "JetBrains Mono Medium"
+    family: "agave Nerd Font"
     #style: Regular
 
   # Bold font face
   bold:
-    family: "JetBrains Mono Medium"
+    # family: "JetBrains Mono Medium"
+    family: "agave Nerd Font"
     #style: Bold
 
   # Italic font face
   italic:
-    family: "JetBrains Mono Medium"
+    # family: "JetBrains Mono Medium"
+    family: "agave Nerd Font"
     #style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: "JetBrains Mono Medium"
+    # family: "JetBrains Mono Medium"
+    family: "agave Nerd Font"
     #style: Bold Italic
 
   # Point size
   # size: 14
-  size: 11
+  size: 14
 
   # Offset
   #offset:

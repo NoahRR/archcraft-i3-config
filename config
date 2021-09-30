@@ -8,20 +8,20 @@ exec_always --no-startup-id sleep1; /usr/bin/feh --bg-scale ~/SAVED_DOWNLOADS/im
 # exec_always --no-startup-id feh --no-fehbg --bg-scale ~/SAVED_DOWNLOADS/beiheng-guo-IAVVv6z3D6g-unsplash.jpg &
 
 # - sudo apt install playerctl              [play/pause/next/prev]
-# bindsym XF86AudioPlay exec playerctl play-pause
-# bindsym XF86AudioPause exec playerctl play-pause
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # sudo apt install light                    [brightness]
 # sudo chmod +s /usr/bin/light
-# bindsym XF86MonBrightnessUp exec light -A 1
-# bindsym XF86MonBrightnessDown exec light -U 1
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # should be pre-installed                   [volume]
-# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5000
-# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5000
-# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +4000
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -4000
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # pip install --user bumblebee-status
 
@@ -41,6 +41,7 @@ bindsym $mod+d exec ~/.config/i3/rofi/bin/launcher -show run
 
 # AUTOSTART APPLICAITONS
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id copyq
 # exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
@@ -95,7 +96,7 @@ default_floating_border normal
 hide_edge_borders none
 
 # background opacity
-exec --no-startup-id picom -CGb
+# exec --no-startup-id picom -CGb
 
 # change borders
 # bindsym $mod+u border none
@@ -202,7 +203,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+semicolon split horizontal
 bindsym $mod+Shift+semicolon split vertical
-bindsym $mod+q split toggle
+# bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -505,6 +506,7 @@ smart_borders on ###########
 exec --no-startup-id notify-send "Welcome, human, to the mainframe"
 
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1200
+# exec_always --no-startup-id picom
 
 
 
@@ -561,7 +563,7 @@ exec_always --no-startup-id ~/.config/i3/bin/autostart.sh
 
 # -- Apps --
 #bindsym $mod+Return exec ~/.config/i3/bin/i3term.sh
-bindsym $mod+Return exec /usr/bin/gnome-terminal
+bindsym $mod+Return exec /usr/bin/alacritty
 # bindsym $mod+Return exec /usr/bin/kitty
 # bindsym $mod+Shift+Return exec ~/.config/i3/bin/i3term.sh -f
 # bindsym $mod+Shift+f exec thunar
@@ -579,11 +581,11 @@ bindsym $mod+Return exec /usr/bin/gnome-terminal
 # bindsym $alt+Control+w exec ~/.config/i3/rofi/bin/windows
 
 # -- Function keys --
-bindsym XF86MonBrightnessUp exec --no-startup-id backlight-up
-bindsym XF86MonBrightnessDown exec --no-startup-id backlight-down
-bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
-bindsym XF86AudioLowerVolume exec --no-startup-id volume-down
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+# bindsym XF86MonBrightnessUp exec --no-startup-id backlight-up
+# bindsym XF86MonBrightnessDown exec --no-startup-id backlight-down
+# bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
+# bindsym XF86AudioLowerVolume exec --no-startup-id volume-down
+# bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # -- i3wm --
 
@@ -768,6 +770,9 @@ floating_modifier $mod
 assign [class="Lxappearance|Nitrogen"] 6
 assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
 
+# open window, run 'xprop' in temrinal, click on window, get the window name - should be near bottom. Then insert like the below
+# for_window [class="Gnome-control-center"] floating enable
+
 ##-- Window Rules ------------------------
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -778,3 +783,6 @@ for_window [class="feh|Viewnior|Gpicview|Gimp"] floating enable
 for_window [class="Kvantum Manager|qt5ct"] floating enable
 for_window [class="VirtualBox Manager|qemu|Qemu-system-x86_64"] floating enable
 for_window [title="About : Aditya Shakya|Getting Started"] floating enable
+for_window [class="copyq"] floating enable
+for_window [class="gnome-control-center"] floating enable
+for_window [class="Gnome-control-center"] floating enable
