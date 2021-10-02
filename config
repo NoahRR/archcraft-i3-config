@@ -82,6 +82,9 @@ set $mod Mod1
 # Configure keyboard repeat speed
 exec_always --no-startup-id sleep1; xset r rate 200 40
 
+# auto connect bluetooth
+exec_always --no-startup-id sleep1; bluetooth-autoconnect
+
 # set screen resolution on Dell XPS 17
 exec_always --no-startup-id bash ~/.config/i3/i3_startup.sh
 
@@ -144,8 +147,8 @@ exec --no-startup-id pa-applet
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+F2 exec palemoon
-# bindsym $mod+Shift+Return exec microsoft-edge-dev
-bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Shift+Return exec microsoft-edge-dev
+# bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec rambox
@@ -253,6 +256,7 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -263,16 +267,17 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
+# bindsym $mod+Ctrl+1 move container to workspace $ws1
+# bindsym $mod+Ctrl+2 move container to workspace $ws2
+# bindsym $mod+Ctrl+3 move container to workspace $ws3
+# bindsym $mod+Ctrl+4 move container to workspace $ws4
+# bindsym $mod+Ctrl+5 move container to workspace $ws5
+# bindsym $mod+Ctrl+6 move container to workspace $ws6
+# bindsym $mod+Ctrl+7 move container to workspace $ws7
+# bindsym $mod+Ctrl+8 move container to workspace $ws8
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -283,41 +288,13 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-
-# Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -462,13 +439,13 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #F31010 #F31010 #80FFF9 #D85AA6
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #FFFFFF #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  # client.focused          #F31010 #F31010 #80FFF9 #D85AA6
+  # client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  # client.unfocused        #FFFFFF #2F3D44 #1ABC9C #454948
+  # client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  # client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  client.background       #2B2C2B
+  # client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
@@ -482,7 +459,7 @@ smart_borders on ###########
 # CUSTOM STUFF ---------------------
 
 # boost track point speed
-# exec --no-startup-id xset m 2 0
+# exec_always --no-startup-id xset m 4 0
 # https://askubuntu.com/questions/205676/how-to-change-mouse-speed-sensitivity
 # exec --no-startup-id xinput --set-prop "TPPS/2 IBM TrackPoint" 169 4 0 0 0 4 0 0 0 1
 
@@ -547,11 +524,17 @@ smart_borders on
 ##-- Colors ------------------------------
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #DA6E89 #DA6E89 #FFFFFF #98C379   #DA6E89
-client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
-client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
+
+# PRETTY
+# client.focused          #DA6E89 #DA6E89 #FFFFFF #98C379   #DA6E89
+
+# STAND OUT
+client.focused          #33BFFF #33BFFF #FFFFFF #33BFFF #33BFFF
+
+# client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
+# client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
 client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
-client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
+# client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
 
 client.background       #1E222A
 
@@ -770,10 +753,41 @@ floating_modifier $mod
 assign [class="Lxappearance|Nitrogen"] 6
 assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
 
+for_window [class="Spotify"] move container to workspace 5
+for_window [class="discord"] move container to workspace 4
+for_window [class="Lutris"] move container to workspace 7
+
 # open window, run 'xprop' in temrinal, click on window, get the window name - should be near bottom. Then insert like the below
 # for_window [class="Gnome-control-center"] floating enable
 
 ##-- Window Rules ------------------------
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="alacritty-float"] floating enable
@@ -786,3 +800,4 @@ for_window [title="About : Aditya Shakya|Getting Started"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="gnome-control-center"] floating enable
 for_window [class="Gnome-control-center"] floating enable
+for_window [class="Wine"] floating enable
