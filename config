@@ -70,8 +70,6 @@ exec --no-startup-id albert
 # exec --no-startup-id thunderbird
 
 
-
-
 ###############################################################################
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -147,8 +145,8 @@ exec --no-startup-id pa-applet
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+F2 exec palemoon
-bindsym $mod+Shift+Return exec microsoft-edge-dev
-# bindsym $mod+Shift+Return exec firefox
+# bindsym $mod+Shift+Return exec microsoft-edge-dev
+bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+F2 exec rambox
@@ -231,6 +229,27 @@ bindsym $mod+a focus parent
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+# FIREFOX DEFAULT LOAD
+# for_window [instance="scratchpads"] move window to scratchpad, scratchpad show
+# bindsym $mod+Shift+m exec --no-startup-id firefox -name scratchpads -e ncmpcpp
+# exec_always --no-startup-id sleep1; firefox "https://mindstash.io/home" -name scratchpads; move scratchpad
+# for_window [instance="scratchpads"] move window to scratchpad, scratchpad show
+
+# bindsym $mod+Shift+m exec --no-startup-id firefox [instance=taskWiki] scratchpad show
+# for_window [instance=taskWiki] move scratchpad, border pixel 2, scratchpad show
+
+# exec_always --no-startup-id exec firefox --class="asdfasdf_fire"
+# bindsym $mod+Shift+m exec firefox --class="otehrasdfasdf"
+# for_window [class=asdfasdf_fire] move scratchpad
+
+# exec_always --no-startup-id exec firefox; move firefox to workspace 2; workspace $ws2
+
+exec --no-startup-id sleep1; i3-msg 'workspace 2; exec firefox;'
+
+# for_window [class=asdfasdf_fire] move scratchpad
+# bindsym $mod+Shift+m exec firefox --class="otehrasdfasdf"
+
 
 # bindsym $mod+Shift+minus exec sublime-text.subl -title scratch
 # bindsym $mod+minus scratchpad show
@@ -800,4 +819,15 @@ for_window [title="About : Aditya Shakya|Getting Started"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="gnome-control-center"] floating enable
 for_window [class="Gnome-control-center"] floating enable
+
+# wine league
 for_window [class="Wine"] floating enable
+for_window [class="explorer.exe"] floating enable
+for_window [title="Wine System Tray"] floating enable
+
+# league
+for_window [class="riotclientux.exe"] floating enable
+for_window [class="leagueclientux.exe"] floating enable
+for_window [title="Riot Client"] floating enable
+for_window [title="League of Legends"] floating enable
+
