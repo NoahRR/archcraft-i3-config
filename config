@@ -57,6 +57,7 @@ exec --no-startup-id optimus-manager-qt
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id unclutter
+exec_always picom
 # exec --no-startup-id spotify __scratchpad
 
 # exec --no-startup-id rambox
@@ -565,7 +566,8 @@ exec_always --no-startup-id ~/.config/i3/bin/autostart.sh
 
 # -- Apps --
 #bindsym $mod+Return exec ~/.config/i3/bin/i3term.sh
-bindsym $mod+Return exec /usr/bin/alacritty
+# bindsym $mod+Return exec /usr/bin/alacritty
+bindsym $mod+Return exec /usr/bin/gnome-terminal
 # bindsym $mod+Return exec /usr/bin/kitty
 # bindsym $mod+Shift+Return exec ~/.config/i3/bin/i3term.sh -f
 # bindsym $mod+Shift+f exec thunar
