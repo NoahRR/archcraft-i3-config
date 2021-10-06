@@ -50,6 +50,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec --no-startup-id optimus-manager-qt
+exec --no-startup-id mailspring
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
@@ -777,6 +778,7 @@ assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
 for_window [class="Spotify"] move container to workspace 5
 for_window [class="discord"] move container to workspace 4
 for_window [class="Lutris"] move container to workspace 7
+for_window [class="Mailspring"] move container to workspace 4
 
 # open window, run 'xprop' in temrinal, click on window, get the window name - should be near bottom. Then insert like the below
 # for_window [class="Gnome-control-center"] floating enable
