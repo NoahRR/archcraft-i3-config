@@ -2,6 +2,8 @@
 - tweak and edit all you want!
 - easy to do in the "config" file
 
+![alt text](https://github.com/NoahRR/archcraft-i3-config/blob/master/wallpapers/Example-Desktop.png?raw=true)
+
 ### Dependencies
 - depends on how much you configure this setup, any package that is called from within this setup will need to be installed
 - critical installs:
