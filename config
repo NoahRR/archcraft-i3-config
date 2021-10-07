@@ -246,7 +246,8 @@ bindsym $mod+minus scratchpad show
 
 # exec_always --no-startup-id exec firefox; move firefox to workspace 2; workspace $ws2
 
-exec --no-startup-id sleep1; i3-msg 'workspace 2; exec firefox;'
+# firefox on startup
+# exec --no-startup-id sleep1; i3-msg 'workspace 2; exec firefox;'
 
 # for_window [class=asdfasdf_fire] move scratchpad
 # bindsym $mod+Shift+m exec firefox --class="otehrasdfasdf"
@@ -771,13 +772,13 @@ floating_modifier $mod
 # bindsym $mod+Shift+g mode "$mode_gaps"
 
 ##-- Workspace Rules ------------------------
-assign [class="Lxappearance|Nitrogen"] 6
-assign [class="Pavucontrol|Xfce4-power-manager-settings"] 6
+# assign [class="Firefox"] $ws3
+assign [class="Mailspring"] $ws4
+assign [class="discord"] $ws4
+assign [class="Spotify"] $ws5
+assign [class="Lutris"] $ws7
 
-for_window [class="Spotify"] move container to workspace 5
-for_window [class="discord"] move container to workspace 4
-for_window [class="Lutris"] move container to workspace 7
-for_window [class="Mailspring"] move container to workspace 4
+# for_window [class="Spotify"] move container to workspace 5
 
 # open window, run 'xprop' in temrinal, click on window, get the window name - should be near bottom. Then insert like the below
 # for_window [class="Gnome-control-center"] floating enable
