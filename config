@@ -2,10 +2,7 @@
 # 
 # steps for UBUNTU:
 # - sudo apt install feh                    [set background]
-# exec_always --no-snartup-id sleep1; feh --bg-fill ~/SAVED_DOWNLOADS/bak1-pink.jpg
-exec_always --no-startup-id sleep1; /usr/bin/feh --bg-scale ~/SAVED_DOWNLOADS/images/BAK-AC.png
-# exec --no-startup-id exec bash $HOME/.fehbg
-# exec_always --no-startup-id feh --no-fehbg --bg-scale ~/SAVED_DOWNLOADS/beiheng-guo-IAVVv6z3D6g-unsplash.jpg &
+exec_always --no-startup-id sleep1; /usr/bin/feh --bg-scale ~/.config/i3/wallpapers/BAK-AC.png
 
 # - sudo apt install playerctl              [play/pause/next/prev]
 bindsym XF86AudioPlay exec playerctl play-pause
